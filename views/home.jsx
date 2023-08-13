@@ -1,11 +1,12 @@
 const React = require('react');
-
-function CommentForm() {
-  
+import { ServiciosComponent } from './formulariosweb/ServiciosComponent';
+import './styles.css'
+function CommentForm() { 
 
   return (
-    <div className="container">
-      hola
+    <div className="App">
+      {ServiciosComponent()}      
+                                                                                                   
     </div>
   );
 }
