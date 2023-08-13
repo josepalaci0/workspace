@@ -1,0 +1,112 @@
+/* Estilos generales */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el header */
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+  }
+  
+  /* Estilos para los servicios */
+  .service-container {
+    margin-top: 20px;
+  }
+  
+  .display {
+    cursor: pointer;
+  }
+  
+  .hidden-content {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+  }
+  
+  .service {
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service h3 {
+    margin-top: 0;
+  }
+  
+  /* Estilos para los comentarios */
+  .display-comment {
+    cursor: pointer;
+  }
+  
+  .display-comment.clicked {
+    color: red;
+  }
+  
+  .comment-form {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .container-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  
+  .left-container {
+    width: 78%;
+    padding: 1px;
+    box-sizing: border-box;
+  }
+  
+  .right-container {
+    width: 22%;
+    padding: 1px;
+    margin-left: 10px;
+    box-sizing: border-box;
+  }
+  
+  .comment {
+    width: 100%;
+    padding: 0.1em;
+    margin-bottom: 10px;
+    border: 1px solid #07224be0;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  button[type="submit"]:focus {
+    outline: none;
+  }
+  
