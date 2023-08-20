@@ -1,14 +1,8 @@
-const React = require('react');
-import { ServiciosComponent } from './formulariosweb/ServiciosComponent';
-import './styles.css'
-function CommentForm() { 
+const Formulario = require('./formulariosweb/Formulario');
 
-  return (
-    <div className="App">
-      {ServiciosComponent()}      
-                                                                                                   
-    </div>
-  );
+function CommentForm() {
+
+  return (  Formulario()  );
 }
 
 module.exports = CommentForm;

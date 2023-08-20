@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './Formulario.css'; // Importa los estilos CSS
 
-export const Formulario = () => {
+
+
+const Formulario = () => {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [mensaje, setMensaje] = useState('');
@@ -47,4 +48,5 @@ export const Formulario = () => {
   );
 };
 
+module.exports = Formulario;
 
