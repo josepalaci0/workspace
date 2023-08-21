@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import Box from './Box'; // Importa el componente Box
+import Box from './box'; // Importa el componente Box
 const Gallery = () => {
     const boxData = [
         {

@@ -299,4 +299,67 @@
   .next-button:hover {
     background-color: rgb(62, 127, 248);
   }
+  .response {
+    position: relative;
+    width: 50%;
+    height: 40px;
+    top: 50%; /* Coloca el elemento en el centro del eje Y */
+    left: 50%; /* Coloca el elemento en el centro del eje X */
+    transform: translate(-30%, -250%); /* Alinea el elemento en el centro de ambos ejes */
+    background-color: rgba(44, 51, 44, 0.637); /* Un ejemplo de color de fondo */
+    color: rgb(72, 235, 8); /* Un ejemplo de color de texto */
+    text-align: center; /* Alinea el contenido en el centro */
+    border-radius: 8px;
+  }
+
+  .comments{
+    border-radius: 5px;
+    
+    
+  }
+  
+  .comment-box {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    margin-left: 3%;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc; /* Color de fondo del avatar */
+    margin-right: 10px;
+  }
+  
+  .comment-content {
+    flex-grow: 1;
+  }
+  
+  .comment-text {
+    color: #ffffff;
+    padding: 10px;    
+    font-size: 14px;
+    line-height: 1.4;
+   
+  }
+  
+  .comment-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .comment-actions button {
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: #757575; /* Color de texto de los botones */
+    cursor: pointer;
+  }
+  
+  .comment-actions button:hover {
+    text-decoration: underline;
+  }
+  
   

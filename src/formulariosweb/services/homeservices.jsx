@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Gallery from './gallery';
-export function ServiciosComponent() {
+import ComentForm from './comentform';
+export function Homeservices() {
   const [showCommentForm, setShowCommentForm] = useState(false);
   const [contentComponent, SetContentComponent] = useState(true);
 
@@ -22,16 +23,7 @@ export function ServiciosComponent() {
         </div>
         <h4 className="display-comment" onClick={toggleCommentForm}> [{showCommentForm ? 'Eliminar comentario' : 'Agregar comentario'}]</h4>
         {showCommentForm && (
-          <form className="comment-form hidden-content-coment">
-            <div className="container-form">
-              <div className="left-container">
-                <textarea name="comment" rows="1" required></textarea>
-              </div>
-              <div className="right-container">
-                <button type="submit">Enviar</button>
-              </div>
-            </div>
-          </form>
+          <ComentForm/>
         )}
       </div>)}
       
@@ -39,4 +31,3 @@ export function ServiciosComponent() {
     </div>
   );
 }
-
