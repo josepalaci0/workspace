@@ -1,39 +1,32 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { DefaultAxios } from '../../petitions/axios';
+
 
 function ComentForm() {
   const [comment, setComment] = useState('');
   const [response, setResponse] = useState('');
   const [isVisible, setIsVisible] = useState(false);
-  const [comments, setComments] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const data = { comment };
-    try {
-      const serverResponse = await axios.post('https://2xgxyh-4000.csb.app/submit', data);
+    const serverResponse = await DefaultAxios.Post('submit', data)   
 
-      if (serverResponse.status === 200) {
-        setResponse(serverResponse.data.message);
-        setIsVisible(true);
+    if (serverResponse.status === 200) {
+      setResponse(serverResponse.data.message);
+      setIsVisible(true);
 
-        // Limpiar el campo de comentario después de enviar
-        setComment('');
+      // Limpiar el campo de comentario después de enviar
+      setComment('');
 
-        // Agregar el nuevo comentario al array de comentarios
-        setComments([...comments, comment]);
-
-        setTimeout(() => {
-          setIsVisible(false);
-          setResponse('');
-        }, 2000);
-      } else {
-        console.error('Failed to submit comment');
-      }
-    } catch (error) {
-      console.error('An error occurred:', error);
+      setTimeout(() => {
+        setIsVisible(false);
+        setResponse('');
+      }, 2000);
+    } else {
+      console.error('Failed to submit comment');
     }
+
   };
 
   return (
@@ -55,22 +48,6 @@ function ComentForm() {
         </div>
         {isVisible && <div className='response'>{response}</div>}
       </form>
-
-      <div className="comments">
-        {comments.map((comment, index) => (
-          <div key={index} className="comment-box">
-            <div className="user-avatar"></div>
-            <div className="comment-content">
-              <div className="comment-text">{comment}</div>
-              
-              <div className="comment-actions">
-                <button>Me gusta</button>
-                <button>Responder</button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }

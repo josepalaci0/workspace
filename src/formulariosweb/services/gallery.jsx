@@ -1,40 +1,14 @@
-import React, { useRef, useEffect } from 'react';
-import Box from './box'; // Importa el componente Box
+import React, { useRef, useEffect, useState } from 'react';
+import Box from './box'; 
+import { DefaultAxios } from '../../petitions/axios';
+
 const Gallery = () => {
-    const boxData = [
-        {
-            imageUrl: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
-            text: 'Explorando paisajes vívidos y misteriosos, viajé con el viento como compañero. Aventuras inolvidables marcaron cada paso, creando recuerdos que iluminan mi camino siempre',
-        },
-        {
-            imageUrl: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
-            text: 'Explorando paisajes vívidos y misteriosos, viajé con el viento como compañero. Aventuras inolvidables marcaron cada paso, creando recuerdos que iluminan mi camino siempre',
-        },
-        {
-            imageUrl: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
-            text: 'Explorando paisajes vívidos y misteriosos, viajé con el viento como compañero. Aventuras inolvidables marcaron cada paso, creando recuerdos que iluminan mi camino siempre',
-        },
-        {
-            imageUrl: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
-            text: 'Explorando paisajes vívidos y misteriosos, viajé con el viento como compañero. Aventuras inolvidables marcaron cada paso, creando recuerdos que iluminan mi camino siempre',
-        },
-        {
-            imageUrl: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
-            text: 'Explorando paisajes vívidos y misteriosos, viajé con el viento como compañero. Aventuras inolvidables marcaron cada paso, creando recuerdos que iluminan mi camino siempre',
-        },
-        {
-            imageUrl: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
-            text: 'Explorando paisajes vívidos y misteriosos, viajé con el viento como compañero. Aventuras inolvidables marcaron cada paso, creando recuerdos que iluminan mi camino siempre',
-        },
-
-        // Agrega más objetos para más imágenes y texto
-    ];
-
-    const totalItems = boxData.length;
+    const [boxData,setBoxData]=useState([]);     
     const scrollContainerRef = useRef(null);
     let scrollInterval = null;
 
     useEffect(() => {
+        DefaultAxios.Get('databox').then((response)=> setBoxData(response.data) )
         const scrollWidth = scrollContainerRef.current.scrollWidth;
         const clientWidth = scrollContainerRef.current.clientWidth;
 
